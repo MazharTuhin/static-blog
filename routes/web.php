@@ -1,9 +1,10 @@
 <?php
 
+use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\TagShowController;
 use App\Http\Controllers\PostShowController;
 use App\Http\Controllers\PostsIndexController;
-use App\Http\Controllers\ProfileController;
-use Illuminate\Support\Facades\Route;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,7 +18,8 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', PostsIndexController::class)->name('home');
-Route::get('/post/{post}', PostShowController::class)->name('posts.show');
+Route::get('/posts/{post}', PostShowController::class)->name('posts.show');
+Route::get('/tags/{tag}', TagShowController::class)->name('tags.show');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
