@@ -11,6 +11,8 @@
         <x-post-list-item :post="$post" />
     @endforeach
 
+    {{ $posts->links() }}
+
     <x-slot name="sidebar">
         <div class="p-6 text-gray-900">
             <a href="{{ route('home') }}" class='inline-flex w-full items-center px-4 py-2 bg-gray-800 text-white rounded-md font-semibold text-xs uppercase tracking-widest shadow-sm hover:bg-gray-700 focus:outline-none focus:ring-2 disabled:opacity-25 transition ease-in-out duration-150'>Back</a>

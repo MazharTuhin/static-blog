@@ -9,6 +9,8 @@
         </div>
     @endif
 
+    {{ $posts->links() }}
+
 
 
     <x-slot name="sidebar">
